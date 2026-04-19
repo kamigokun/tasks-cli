@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+tasks.json          # Don't commit personal task data
+.env
+*.egg-info/
+dist/
