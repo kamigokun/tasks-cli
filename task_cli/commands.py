@@ -31,7 +31,7 @@ def add_task(description):
 
 
 
-def list_task(status=None):
+def list_tasks(status=None):
     tasks = load_tasks()
 
     # Filter by status if one was provided
@@ -55,7 +55,7 @@ def list_task(status=None):
 
 
 def delete_task(task_id):
-    task = load_tasks()
+    tasks = load_tasks()
 
     # Check if task exists
     task = find_task_by_id(tasks,task_id)
@@ -67,6 +67,8 @@ def delete_task(task_id):
     tasks = [t for t in tasks if t["id"] != task_id]
     save_tasks(tasks)
     print(f"Task {task_id}  deleted successfully.")
+
+
 
 
 def update_task(task_id, new_description):
@@ -96,6 +98,8 @@ def update_task(task_id, new_description):
     save_tasks(tasks)
 
     print(f"Task {task_id} updated successfully")
+
+
 
 
 def mark_task(task_id, status):

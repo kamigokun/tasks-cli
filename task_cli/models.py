@@ -23,7 +23,7 @@ def create_task(task_id, description):
 def validate_description(description):
 
     # Check if description is empty or just whitespaces
-    if not description or not description.stip():
+    if not description or not description.strip():
         return False, "Error: Task description cannot by empty."
     # Check if description is too long
     if len(description) > 200:

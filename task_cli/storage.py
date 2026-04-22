@@ -29,7 +29,7 @@ def save_tasks(tasks):
         json.dump(tasks, f, indent=2)
 
 """Return the next available task ID."""
-def get_next_di(tasks):
+def get_next_id(tasks):
     # If no tasks exist, start from ID 1
     if not tasks:
         return 1

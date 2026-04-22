@@ -30,6 +30,25 @@ Commands:
   mark-in-progress <id>          Mark task as in progress
     """)
 
+def parse_task_id(value):
+    # Try to convert the value to a number
+    # If it fails it means user typed letters instead of a number
+    try:
+        task_id = int(value)
+
+        # Also check it's a positive number
+        # Task IDs can't be 0 or negative
+        if task_id <= 0:
+            print("Error: Task ID must be a positive number.")
+            return None
+
+        return task_id
+
+    except ValueError:
+        # This runs when int() fails
+        # Example: int("abc") fails and lands here
+        print(f"Error: '{value}' is not a valid task ID. Please use a number.")
+        return None
 
 def main():
     # sys.argv is everything the user typed as a list
