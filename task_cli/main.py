@@ -110,4 +110,7 @@ def main():
         print(f"Error: Unknown command '{command}")
         show_usage()
 
-
+# "Only run main() if this file is run directly"
+# Not when it's imported by another file
+if __name__ == "__main__":
+    main()
